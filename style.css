@@ -1,0 +1,72 @@
+* {
+  font-family: "Ubuntu", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  height: 85vh;
+  background: linear-gradient(to left, rgba(3, 5, 94, 0.3), rgba(66, 21, 21, 0.8)), url("https://i.postimg.cc/cJZfDsns/Comercial-Ciudad-sin-logo.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+.container .flex_items {
+  display: flex;
+}
+.container .flex_items .nav {
+  position: absolute;
+  right: 0;
+  padding: 5px;
+}
+.container .flex_items .logo {
+  padding: 5px;
+  color: #fff;
+  display: inline-flex;
+}
+.container .flex_items .logo span {
+  padding: 15px;
+  padding-left: 5px;
+}
+.container .logo ion-icon {
+  width: 50px;
+  height: 50px;
+  color: #fff;
+}
+.container .nav ion-icon {
+  width: 50px;
+  height: 50px;
+  color: #fff;
+}
+.container .menu_ul {
+  background: #fff;
+  height: 100vh;
+  position: absolute;
+  z-index: 100;
+  width: 77%;
+  top: 0;
+  right: 0;
+  box-shadow: 0 10px 30px 10px #313131;
+  padding-top: 15%;
+}
+.container .menu_ul .item {
+  list-style: none;
+  display: grid;
+  place-items: center;
+  padding: 15px;
+}
+.container .menu_ul .item a {
+  text-decoration: none;
+  color: #313131;
+}
+.container .menu_ul ion-icon {
+  width: 50px;
+  height: 50px;
+  color: #313131;
+  top: 0;
+  position: absolute;
+  right: 0;
+}
+
+/*# sourceMappingURL=style.css.map */
