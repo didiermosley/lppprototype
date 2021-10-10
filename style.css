@@ -12,20 +12,21 @@
   background-repeat: no-repeat;
   position: relative;
 }
-.container .flex_items {
+.container .flex-items {
   display: flex;
 }
-.container .flex_items .nav {
+.container .flex-items .toggle {
   position: absolute;
   right: 0;
   padding: 5px;
+  cursor: pointer;
 }
-.container .flex_items .logo {
+.container .flex-items .logo {
   padding: 5px;
   color: #fff;
   display: inline-flex;
 }
-.container .flex_items .logo span {
+.container .flex-items .logo span {
   padding: 15px;
   padding-left: 5px;
 }
@@ -34,39 +35,182 @@
   height: 50px;
   color: #fff;
 }
-.container .nav ion-icon {
+.container .toggle ion-icon {
   width: 50px;
   height: 50px;
   color: #fff;
 }
-.container .menu_ul {
+.container .nav {
   background: #fff;
   height: 100vh;
-  position: absolute;
-  z-index: 100;
+  position: fixed;
+  z-index: 700;
   width: 77%;
   top: 0;
-  right: 0;
-  box-shadow: 0 10px 30px 10px #313131;
+  right: -80%;
   padding-top: 15%;
+  transition: all 0.3s ease-out;
 }
-.container .menu_ul .item {
+.container .nav .item {
   list-style: none;
   display: grid;
   place-items: center;
   padding: 15px;
 }
-.container .menu_ul .item a {
+.container .nav .item a {
   text-decoration: none;
-  color: #313131;
+  color: #404145;
 }
-.container .menu_ul ion-icon {
+.container .nav ion-icon {
   width: 50px;
   height: 50px;
-  color: #313131;
+  color: #404145;
   top: 0;
   position: absolute;
   right: 0;
+}
+.container .nav .social-media {
+  text-align: center;
+  padding: 10px;
+  margin: 27px;
+  border-top: 0.5px solid #e2e2e2;
+}
+.container .nav .social-media ion-icon {
+  width: 50px;
+  height: 50px;
+  color: #404145;
+  position: relative;
+}
+.container .glass-bg {
+  display: none;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  background-color: rgba(17, 17, 17, 0.7);
+  z-index: 500;
+  transition: all 0.3s;
+}
+.container .info-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
+}
+.container .info-container .text {
+  padding: 10px;
+  margin: 15px;
+  text-align: center;
+}
+.container .info-container .text h2 {
+  color: #fff;
+  font-size: 2.5rem;
+}
+.container .info-container .text p {
+  color: #f7f7f7;
+  font-size: 1rem;
+}
+.container .arrow-down {
+  width: 100vw;
+  display: grid;
+  place-items: center;
+}
+.container .arrow-down .arrow {
+  width: 50px;
+  height: 50px;
+  color: #fff;
+  animation-name: AnimatedArrow;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  position: relative;
+}
+@keyframes AnimatedArrow {
+  0% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+.container .open {
+  right: 0;
+}
+.container .active {
+  color: #123c72;
+}
+.container .appear {
+  display: block;
+}
+
+.section:nth-child(2) {
+  background: #f7f7f7;
+  position: relative;
+  padding: 10px;
+}
+.section:nth-child(2) .cards {
+  background: #fff;
+  padding: 25px;
+  margin: 10px;
+  border-radius: 10px;
+  top: -40px;
+  position: relative;
+  box-shadow: 0 5px 30px 5px #7a7d85;
+}
+.section:nth-child(2) .cards h2 {
+  color: #404145;
+}
+.section:nth-child(2) .cards .ul-list {
+  color: #7a7d85;
+  margin: 0 25px;
+}
+.section:nth-child(2) .info-ico {
+  text-align: center;
+  background: #047ff0;
+  background: linear-gradient(240deg, #047ff0 0%, #001334 70%);
+  width: 75px;
+  margin: 0 auto;
+  border-radius: 50%;
+}
+.section:nth-child(2) .info-ico ion-icon {
+  font-size: 70px;
+  color: #e2e2e2;
+}
+
+.section {
+  z-index: 50;
+  padding: 15px;
+}
+.section .info {
+  margin: 20px;
+}
+.section .info img {
+  height: 450px;
+  border-radius: 5px;
+}
+.section .info h2 {
+  color: #404145;
+  text-align: start;
+}
+.section .info p {
+  color: #7a7d85;
+  text-align: start;
+}
+.section .info .center-item {
+  text-align: center;
+}
+
+.section:nth-child(4) {
+  background-color: #f7f7f7;
+}
+.section:nth-child(4) img {
+  height: 200px;
+}
+.section:nth-child(4) span {
+  font-size: 2rem;
+  color: #404145;
 }
 
 /*# sourceMappingURL=style.css.map */

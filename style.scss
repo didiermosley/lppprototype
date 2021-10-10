@@ -1,7 +1,14 @@
 
+// Variables
 $gradient: linear-gradient(to left,rgba(3, 5, 94,.3),rgba(66, 21, 21, 0.8));
 $img-bg: url("https://i.postimg.cc/cJZfDsns/Comercial-Ciudad-sin-logo.jpg");
-$font-color:#313131;
+$font-color:#404145;
+$font-color2:#7a7d85;
+$light-fcolor:#fff;
+$light-fcolor2:#f7f7f7;
+$standar-blue:rgb(18, 60, 114);
+$apartment-skycraper:url("https://i.postimg.cc/qqKwC1Kq/DSC5582-2.jpg");
+$shaking-hands: url("https://i.postimg.cc/ZYvVg5Qm/acuerdo-compra-trato.jpg");
 
 @mixin mobile-logos($color){
     width:50px;
@@ -14,7 +21,9 @@ $font-color:#313131;
     margin: 0; padding: 0;
 }
 
+
 .container{
+    // overflow: hidden;
     height: 85vh;
     background:$gradient,$img-bg;
     background-size: cover;
@@ -22,14 +31,16 @@ $font-color:#313131;
     background-repeat: no-repeat;
     position: relative;
     
-    .flex_items{
+    .flex-items{
         display:flex;
 
-        .nav{
+        .toggle{
             position: absolute;
             right: 0;
             padding:5px;
+            cursor: pointer;
         }
+
         .logo{
             padding:5px;
             color:#fff;
@@ -46,26 +57,24 @@ $font-color:#313131;
         @include mobile-logos(#fff);
     }
 
-    .nav{
+    .toggle{
         ion-icon{
             @include mobile-logos(#fff);
         }
     }
 
-    .menu_ul{
-
-
-
-
+    .nav{
         background:#fff;
         height: 100vh;
-        position: absolute;
-        z-index:100;
+        position: fixed;
+        // For mobile menu i radther use position fixed insteead of absolute or relative.
+        z-index:700;
         width:77%;
         top: 0;
-        right:0;
-        box-shadow: 0 10px 30px 10px $font-color;
+        right:-80%;
+        // box-shadow: 0 10px 30px 10px $font-color;
         padding-top: 15%;
+        transition: all .3s ease-out;
 
         .item{
             list-style: none;
@@ -85,5 +94,164 @@ $font-color:#313131;
             position: absolute;
             right:0;
         }
+
+        .social-media{
+            text-align: center;
+            padding: 10px;
+            margin:27px;
+            border-top:.5px solid #e2e2e2;
+            ion-icon{
+                @include mobile-logos($font-color);
+                position: relative;
+            }
+        }
+    } 
+
+    .glass-bg{
+        display: none;
+        height: 100vh;
+        width: 100vw;
+        position: fixed;
+        top: 0;
+        background-color: rgba(#111,.7);
+        z-index: 500;
+        transition: all .3s;
+    }
+
+    .info-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height:80%;
+        .text {
+            padding:10px;
+            margin:15px;
+            text-align: center;
+            
+            h2{
+                color:$light-fcolor;
+                font-size: 2.5rem;
+
+            }
+        
+            p{
+                color:$light-fcolor2;
+                font-size: 1rem;
+            }
+        }
+    }
+    
+    .arrow-down{
+        width:100vw;
+        display:grid;
+        place-items: center;
+        .arrow{
+            @include mobile-logos($light-fcolor);
+            animation-name: AnimatedArrow;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            position: relative;
+        }
+    }
+
+    @keyframes AnimatedArrow {
+        0%{
+            transform: translateY(-10px);
+        }
+        50%{
+            transform: translateY(10px);
+        }
+        100%{
+            transform: translateY(-10px);
+        }
+    }
+    // This class didnt want to work due to it wanst a container class child, then i put it inside the container class and it worked!
+    .open{
+        right:0;
+        // transform: translateX(290px);
+    }
+
+    .active{
+        color:$standar-blue;
+    }
+
+    .appear{
+        display: block;
+    }
+}
+
+.section:nth-child(2){
+    background:$light-fcolor2;
+        position: relative;
+        padding: 10px;
+    .cards{
+        background: $light-fcolor;
+        padding:25px;
+        margin:10px;
+        border-radius: 10px;
+        top:-40px;
+        position: relative;
+        box-shadow: 0 5px 30px 5px $font-color2;
+
+        h2{
+            color:$font-color;
+        }
+
+        .ul-list{
+            color: $font-color2;
+            margin:0 25px;
+        }
+    }
+
+    .info-ico{
+        text-align: center;
+        background: rgb(4,127,240);
+        background: linear-gradient(240deg, rgba(4,127,240,1) 0%, rgba(0,19,52,1) 70%);  
+        width:75px;
+        margin: 0 auto;
+        border-radius: 50%;
+
+        
+        ion-icon{
+            font-size: 70px;
+            color: #e2e2e2;
+        }
+    }
+}
+
+.section{
+    // height:90vh;
+    z-index: 50;
+    padding:15px;
+
+
+    .info{
+        margin: 20px;
+        img{
+            height:450px;
+            border-radius: 5px;
+        }
+        h2{
+            color: $font-color;
+            text-align:start;
+        }
+        p{
+            color:$font-color2;
+            text-align:start;
+        }
+        .center-item{
+            text-align: center;
+        }
+    }
+}
+
+.section:nth-child(4){
+    background-color: $light-fcolor2;
+    img{
+        height:200px;
+    }
+    span{
+        font-size: 2rem;
+        color: $font-color;
     }
 }
