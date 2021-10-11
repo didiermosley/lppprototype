@@ -16,7 +16,12 @@ $shaking-hands: url("https://i.postimg.cc/ZYvVg5Qm/acuerdo-compra-trato.jpg");
     color: $color;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 *{
+    box-sizing: border-box;
     font-family: 'Ubuntu', sans-serif;
     margin: 0; padding: 0;
 }
@@ -68,6 +73,7 @@ $shaking-hands: url("https://i.postimg.cc/ZYvVg5Qm/acuerdo-compra-trato.jpg");
         height: 100vh;
         position: fixed;
         // For mobile menu i radther use position fixed insteead of absolute or relative.
+        // It is good for keep the width of the viewport with no overflow-x and also it is good to put the container over everything in the screen.
         z-index:700;
         width:77%;
         top: 0;
@@ -191,7 +197,7 @@ $shaking-hands: url("https://i.postimg.cc/ZYvVg5Qm/acuerdo-compra-trato.jpg");
         border-radius: 10px;
         top:-40px;
         position: relative;
-        box-shadow: 0 5px 30px 5px $font-color2;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 
         h2{
             color:$font-color;
@@ -205,8 +211,7 @@ $shaking-hands: url("https://i.postimg.cc/ZYvVg5Qm/acuerdo-compra-trato.jpg");
 
     .info-ico{
         text-align: center;
-        background: rgb(4,127,240);
-        background: linear-gradient(240deg, rgba(4,127,240,1) 0%, rgba(0,19,52,1) 70%);  
+        background:$light-fcolor2;
         width:75px;
         margin: 0 auto;
         border-radius: 50%;
@@ -214,7 +219,7 @@ $shaking-hands: url("https://i.postimg.cc/ZYvVg5Qm/acuerdo-compra-trato.jpg");
         
         ion-icon{
             font-size: 70px;
-            color: #e2e2e2;
+            color: $font-color;
         }
     }
 }
@@ -245,7 +250,7 @@ $shaking-hands: url("https://i.postimg.cc/ZYvVg5Qm/acuerdo-compra-trato.jpg");
     }
 }
 
-.section:nth-child(4){
+.section:nth-child(5){
     background-color: $light-fcolor2;
     img{
         height:200px;
@@ -253,5 +258,71 @@ $shaking-hands: url("https://i.postimg.cc/ZYvVg5Qm/acuerdo-compra-trato.jpg");
     span{
         font-size: 2rem;
         color: $font-color;
+    }
+}
+
+.middle-img{
+    height: 50vh;
+    background-image: url('https://i.postimg.cc/6pc0R28r/EEE-1144-2-2.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment:fixed;
+    // transform:translateY(-1px);
+}
+
+.splitter{
+    border-top: .5px #dddddd solid;    
+}
+
+footer{
+    width:100vw;
+    background-color:$light-fcolor2;
+    padding:10px;
+    
+    .foo-container{
+        margin: 10px;
+        h2{
+            color: $font-color;
+        }
+
+        .more-info{
+            color: $font-color2;
+        }
+
+        .logo{
+            p{
+                text-align: center;
+            }
+            img{
+            width:45%
+            }
+        }
+
+        .social-media{
+            ion-icon{
+            @include mobile-logos($font-color);
+            }
+        }
+    }
+}
+
+// Tablets
+@media screen and(min-width: 768px){
+    section:nth-child(2){
+        display: grid;
+        place-items: center;
+        .cards{
+            width:40%;
+        }
+    }
+    footer{
+        .foo-container{
+            .logo{
+                img{
+                    width:30%;
+                }
+            }
+        }
     }
 }

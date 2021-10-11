@@ -13,7 +13,7 @@
 </head>
 <body>
     <!-- Menu/Header -->
-    <div class="container">
+    <div class="container" id="cont">
         <header class="header">
             <div class="flex-items">
                 <div class="logo">
@@ -28,9 +28,9 @@
 
             <nav class="nav" id="nav">
                 <ul class="menu-ul">
-                    <li class="item" id="sec1"><a href="">Inicio</a></li>
-                    <li class="item" id="sec2"><a href="">Servicios</a></li>
-                    <li class="item" id="sec3"><a href="">Contáctanos</a></li>
+                    <li class="item" id="sec1"><a href="#cont">Inicio</a></li>
+                    <li class="item" id="sec2"><a href="#2">Servicios</a></li>
+                    <li class="item" id="sec3"><a href="#footer">Contáctanos</a></li>
                     <ion-icon name="close" id="close-btn"></ion-icon>
                 </ul>
 
@@ -51,11 +51,12 @@
         </div>
 
         <div class="arrow-down">
-            <ion-icon name="arrow-round-down" class="arrow"></ion-icon>
+            <a href="#0"><ion-icon name="arrow-round-down" class="arrow"></ion-icon></a>
         </div>
 
     </div>
 
+    <!-- Sections -->
     <section class="section" id="0">
         <!-- Cards with info. -->
         <div class="cards">
@@ -95,6 +96,8 @@
         </div>
     </section>
 
+    <div class="middle-img"></div>
+
     <section class="section" id="2">
         <!-- More explanation. -->
         <div class="info">
@@ -102,6 +105,32 @@
             <span>Licitaciones privadas mediante contratos colaborativos entre <b>Promotora</b> y <b>Constructora.</b></span>
         </div>
     </section>
+
+    <div class="splitter"></div>
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="foo-container">
+            <div class="logo">
+                <p><img src="./logos/Logo para sitio de Licitación 200x200.png" alt="" srcset=""></p>
+            </div>
+            <p class="more-info">© 2021 Licitaciones Privadas Panamá</p>
+        </div>
+
+        <div class="foo-container">
+            <h2>Acerca de nosotros</h2>
+            <p class="more-info">Empresa encargada de ofrecer un sistema por el que se adjudica la realización de una obra o un servicio, generalmente de carácter público, a la persona o la empresa que ofrece las mejores condiciones mediante licitaciones.</p>
+        </div>
+
+
+        <div class="foo-container">
+            <h2>Contáctanos</h2>
+            <div class="social-media">
+                <ion-icon name="logo-facebook"></ion-icon>
+                <ion-icon name="logo-linkedin"></ion-icon>
+                <ion-icon name="logo-instagram"></ion-icon>
+            </div>
+        </div>
+    </footer>
 
     <!-- Script for icons -->
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
