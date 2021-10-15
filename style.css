@@ -35,6 +35,10 @@ html {
   padding: 15px;
   padding-left: 5px;
 }
+.container .flex-items .logo img {
+  width: 50px;
+  height: 50px;
+}
 .container .logo ion-icon {
   width: 50px;
   height: 50px;
@@ -150,6 +154,29 @@ html {
   display: block;
 }
 
+.section {
+  z-index: 50;
+  padding: 15px;
+}
+.section .info {
+  margin: 20px;
+}
+.section .info img {
+  height: 450px;
+  border-radius: 5px;
+}
+.section .info h2 {
+  color: #404145;
+  text-align: start;
+}
+.section .info p {
+  color: #7a7d85;
+  text-align: start;
+}
+.section .info .center-item {
+  text-align: center;
+}
+
 .section:first-child {
   background: #f7f7f7;
   position: relative;
@@ -183,29 +210,6 @@ html {
   color: #404145;
 }
 
-.section {
-  z-index: 50;
-  padding: 15px;
-}
-.section .info {
-  margin: 20px;
-}
-.section .info img {
-  height: 450px;
-  border-radius: 5px;
-}
-.section .info h2 {
-  color: #404145;
-  text-align: start;
-}
-.section .info p {
-  color: #7a7d85;
-  text-align: start;
-}
-.section .info .center-item {
-  text-align: center;
-}
-
 .section:nth-child(4) {
   background-color: #f7f7f7;
 }
@@ -226,14 +230,11 @@ html {
   background-attachment: fixed;
 }
 
-.splitter {
-  border-top: 0.5px #dddddd solid;
-}
-
 footer {
   width: 100vw;
   background-color: #f7f7f7;
   padding: 10px;
+  border-top: 0.5px #dddddd solid;
 }
 footer .foo-container {
   margin: 10px;
@@ -270,13 +271,46 @@ footer .foo-container .social-media ion-icon {
   }
 }
 @media screen and (min-width: 1024px) {
-  .container {
-    padding: 0 15vh;
+  .space {
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .container .header {
+    display: flex;
+    justify-content: space-between;
+  }
+  .container .toggle {
+    display: none;
+  }
+  .container .flex-items {
+    height: max-content;
+    width: max-content;
+  }
+  .container .nav {
+    position: static;
+    background: none;
+    height: max-content;
+    width: max-content;
+    padding-top: 0;
+  }
+  .container .nav .menu-ul {
+    display: flex;
+  }
+  .container .nav .item a {
+    color: #fff;
+  }
+  .container .nav .social-media, .container .nav #close-btn {
+    display: none;
   }
 
   .section {
-    padding: 0 15vh;
     display: flex;
+  }
+
+  .section:first-child .cards {
+    max-width: 370px;
   }
 
   footer {

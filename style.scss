@@ -55,6 +55,11 @@ html{
                 padding:15px;
                 padding-left: 5px;
             }
+
+            img{
+                width: 50px;
+                height: 50px;
+            }
         }
     }
 
@@ -186,6 +191,32 @@ html{
     }
 }
 
+.section{
+    // height:90vh;
+    z-index: 50;
+    padding:15px;
+
+
+    .info{
+        margin: 20px;
+        img{
+            height:450px;
+            border-radius: 5px;
+        }
+        h2{
+            color: $font-color;
+            text-align:start;
+        }
+        p{
+            color:$font-color2;
+            text-align:start;
+        }
+        .center-item{
+            text-align: center;
+        }
+    }
+}
+
 .section:first-child{
     background:$light-fcolor2;
         position: relative;
@@ -224,31 +255,7 @@ html{
     }
 }
 
-.section{
-    // height:90vh;
-    z-index: 50;
-    padding:15px;
 
-
-    .info{
-        margin: 20px;
-        img{
-            height:450px;
-            border-radius: 5px;
-        }
-        h2{
-            color: $font-color;
-            text-align:start;
-        }
-        p{
-            color:$font-color2;
-            text-align:start;
-        }
-        .center-item{
-            text-align: center;
-        }
-    }
-}
 
 .section:nth-child(4){
     background-color: $light-fcolor2;
@@ -271,14 +278,15 @@ html{
     // transform:translateY(-1px);
 }
 
-.splitter{
-    border-top: .5px #dddddd solid;    
-}
+// .splitter{
+// }
 
 footer{
     width:100vw;
     background-color:$light-fcolor2;
     padding:10px;
+    border-top: .5px #dddddd solid;    
+    // border-top:#111 1px solid ;
     
     .foo-container{
         margin: 10px;
@@ -327,14 +335,64 @@ footer{
     }
 }
 
+// For desktop pc and laptops.
 @media screen and(min-width:1024px){
+    .space{
+        max-width: 1440px;
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    // Menu for desktop.
     .container{
-        padding: 0 15vh;
+        .header{
+            display: flex;
+            justify-content: space-between;
+        }
+        .toggle{
+            display: none;
+        }
+
+        .flex-items{
+            height: max-content;
+            width: max-content;
+        }
+
+        .nav{
+            position:static;
+            background: none;
+            height:max-content;
+            width:max-content;
+            padding-top: 0;
+
+            .menu-ul{
+                display: flex;
+            }
+
+            .item{
+                a{
+                    color: $light-fcolor;
+                }
+            }
+
+            .social-media, #close-btn{
+                display: none;
+            }
+        }
     }
 
     .section{
-        padding: 0 15vh;
         display:flex;
+    }
+
+    .section:first-child{
+        .cards{
+           max-width: 370px;
+        }
+    }
+
+    .section:nth-child(2){
+        .info{}
     }
 
     footer{
