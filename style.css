@@ -150,12 +150,12 @@ html {
   display: block;
 }
 
-.section:nth-child(2) {
+.section:first-child {
   background: #f7f7f7;
   position: relative;
   padding: 10px;
 }
-.section:nth-child(2) .cards {
+.section:first-child .cards {
   background: #fff;
   padding: 25px;
   margin: 10px;
@@ -164,21 +164,21 @@ html {
   position: relative;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
-.section:nth-child(2) .cards h2 {
+.section:first-child .cards h2 {
   color: #404145;
 }
-.section:nth-child(2) .cards .ul-list {
+.section:first-child .cards .ul-list {
   color: #7a7d85;
   margin: 0 25px;
 }
-.section:nth-child(2) .info-ico {
+.section:first-child .info-ico {
   text-align: center;
   background: #f7f7f7;
   width: 75px;
   margin: 0 auto;
   border-radius: 50%;
 }
-.section:nth-child(2) .info-ico ion-icon {
+.section:first-child .info-ico ion-icon {
   font-size: 70px;
   color: #404145;
 }
@@ -206,13 +206,13 @@ html {
   text-align: center;
 }
 
-.section:nth-child(5) {
+.section:nth-child(4) {
   background-color: #f7f7f7;
 }
-.section:nth-child(5) img {
+.section:nth-child(4) img {
   height: 200px;
 }
-.section:nth-child(5) span {
+.section:nth-child(4) span {
   font-size: 2rem;
   color: #404145;
 }
@@ -257,16 +257,31 @@ footer .foo-container .social-media ion-icon {
 }
 
 @media screen and (min-width: 768px) {
-  section:nth-child(2) {
-    display: grid;
-    place-items: center;
+  .section:first-child {
+    display: flex;
+    justify-content: center;
   }
-  section:nth-child(2) .cards {
+  .section:first-child .cards {
     width: 40%;
   }
 
   footer .foo-container .logo img {
     width: 30%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .container {
+    padding: 0 15vh;
+  }
+
+  .section {
+    padding: 0 15vh;
+    display: flex;
+  }
+
+  footer {
+    padding: 0 15vh;
+    width: 100%;
   }
 }
 

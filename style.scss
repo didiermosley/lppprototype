@@ -186,7 +186,7 @@ html{
     }
 }
 
-.section:nth-child(2){
+.section:first-child{
     background:$light-fcolor2;
         position: relative;
         padding: 10px;
@@ -250,7 +250,7 @@ html{
     }
 }
 
-.section:nth-child(5){
+.section:nth-child(4){
     background-color: $light-fcolor2;
     img{
         height:200px;
@@ -309,9 +309,9 @@ footer{
 
 // Tablets
 @media screen and(min-width: 768px){
-    section:nth-child(2){
-        display: grid;
-        place-items: center;
+    .section:first-child{
+        display: flex;
+        justify-content: center;
         .cards{
             width:40%;
         }
@@ -324,5 +324,21 @@ footer{
                 }
             }
         }
+    }
+}
+
+@media screen and(min-width:1024px){
+    .container{
+        padding: 0 15vh;
+    }
+
+    .section{
+        padding: 0 15vh;
+        display:flex;
+    }
+
+    footer{
+        padding: 0 15vh;
+        width: 100%;
     }
 }
