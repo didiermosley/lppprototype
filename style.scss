@@ -77,8 +77,8 @@ html{
         background:#fff;
         height: 100vh;
         position: fixed;
-        // For mobile menu i radther use position fixed insteead of absolute or relative.
-        // It is good for keep the width of the viewport with no overflow-x and also it is good to put the container over everything in the screen.
+        // For mobile menu i'd radther use position fixed instead of absolute or relative.
+        // It is good for keeping the width of the viewport with no overflow-x and also it is good to put the container over everything in the screen.
         z-index:700;
         width:77%;
         top: 0;
@@ -106,6 +106,10 @@ html{
             right:0;
         }
 
+        .moon{
+            left:0;
+        }
+
         .social-media{
             text-align: center;
             padding: 10px;
@@ -114,6 +118,18 @@ html{
             ion-icon{
                 @include mobile-logos($font-color);
                 position: relative;
+            }
+
+            #fb:hover{
+                color:#4267B2;
+            }
+
+            #ig:hover{
+                color: #c13584;
+            }
+
+            #li:hover{
+                color:#0e76a8;
             }
         }
     } 
@@ -153,9 +169,8 @@ html{
     }
     
     .arrow-down{
-        width:100vw;
-        display:grid;
-        place-items: center;
+        width:max-content;
+        margin:0 auto;
         .arrow{
             @include mobile-logos($light-fcolor);
             animation-name: AnimatedArrow;
@@ -311,12 +326,37 @@ footer{
             ion-icon{
             @include mobile-logos($font-color);
             }
+
+            #fb:hover{
+                color:#4267B2;
+            }
+
+            #ig:hover{
+                color: #c13584;
+            }
+
+            #li:hover{
+                color:#0e76a8;
+            }
+        }
+    }
+}
+// Media query for nav ins desktop. 
+// Small screens
+@media screen and (max-width:375px){
+    .container{
+        .info-container{
+            height: 70%;
         }
     }
 }
 
 // Tablets
 @media screen and(min-width: 768px){
+    body{
+        overflow-x: hidden;
+    }
+    
     .section:first-child{
         display: flex;
         justify-content: center;
@@ -325,11 +365,14 @@ footer{
         }
     }
     footer{
-        .foo-container{
+        .foo-container:first-child{
             .logo{
                 img{
-                    width:30%;
+                    width:20%;
                 }
+            }
+            .more-info{
+                text-align: center;
             }
         }
     }
@@ -378,6 +421,14 @@ footer{
             .social-media, #close-btn{
                 display: none;
             }
+
+            .moon{
+                position: static;
+                color:$light-fcolor2;
+                height: 25px;
+                padding: 15px;
+            }
+            
         }
     }
 
@@ -392,11 +443,74 @@ footer{
     }
 
     .section:nth-child(2){
-        .info{}
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .info{
+            width:50%;
+            display: flex;
+            flex: wrap;
+
+            .more-info{
+                margin:15px;
+
+                h2{
+                    font-size: 2.5rem;
+                }
+
+                p{
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    }
+    
+
+
+    .section:nth-child(4){
+        .info{
+            display:flex;
+            justify-content: center;
+            padding: 20px;
+            img{
+                width:430px;
+                height:270px;
+            }
+
+            span{
+                padding-top:5%;
+                margin:15px;
+            }
+        }
     }
 
     footer{
-        padding: 0 15vh;
-        width: 100%;
+        .flex-footer{
+            display:flex;
+        }
+        .foo-container:first-child{
+            min-width:400px;
+            .logo{
+                img{
+                    height:200px;
+                    width: 200px;
+                }
+            }
+            .more-info{
+                text-align: center;
+            }
+        }
+
+        .foo-container:nth-child(2){
+            padding:5%;
+        }
+        .foo-container:last-child{
+            min-width:200px;
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
     }
 }
+

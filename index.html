@@ -11,7 +11,7 @@
     <link rel="shortcut icon" href="./logos/favicon.png" type="image/x-icon" sizes="16x16">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="body">
     <!-- Menu/Header -->
     <div class="container" id="cont">
         <header class="header space">
@@ -35,12 +35,13 @@
                     <li class="item" id="sec2"><a href="#2">Servicios</a></li>
                     <li class="item" id="sec3"><a href="#footer">Contáctanos</a></li>
                     <ion-icon name="close" id="close-btn"></ion-icon>
+                    <ion-icon name="moon" class="moon" id="mode"></ion-icon>
                 </ul>
 
                 <div class="social-media">
-                    <ion-icon name="logo-facebook"></ion-icon>
-                    <ion-icon name="logo-linkedin"></ion-icon>
-                    <ion-icon name="logo-instagram"></ion-icon>
+                    <ion-icon name="logo-facebook" id="fb"></ion-icon>
+                    <ion-icon name="logo-linkedin" id="li"></ion-icon>
+                    <ion-icon name="logo-instagram" id="ig"></ion-icon>
                 </div>
             </nav>
 
@@ -66,7 +67,7 @@
             <!-- Cards with info. -->
             <div class="cards">
                 <div class="info-ico">
-                    <ion-icon name="business"></ion-icon> 
+                    <ion-icon name="business" class="svg"></ion-icon> 
                 </div>
         
                 <h2>Promotora</h2>    
@@ -80,7 +81,7 @@
             
             <div class="cards">
                 <div class="info-ico">
-                    <ion-icon name="construct"></ion-icon>
+                    <ion-icon name="construct" class="svg"></ion-icon>
                 </div>
                <h2>Constructora</h2>
                 <ul class="ul-list">
@@ -96,19 +97,24 @@
             <!-- More info -->
             <div class="info">
                 <p class="center-item"><img src="https://i.postimg.cc/qqKwC1Kq/DSC5582-2.jpg" alt="" srcset=""></p>
-                <h2>Conectando a las mejores promotoras y constructoras del país.</h2>
-                <p>Hacerlo nunca fue tan fácil.</p>
+                <div class="more-info">
+                    <h2>Conectando a las mejores promotoras y constructoras del país.</h2>
+                    <p>Hacerlo nunca fue tan fácil.</p>
+                </div>
             </div>
         </section>
     
         <div class="middle-img"></div>
     
-        <section class="section" id="2">
+        <section class="section " id="2">
             <!-- More explanation. -->
-        <div class="info">
-            <p class="center-item"><img src="https://i.postimg.cc/ZYvVg5Qm/acuerdo-compra-trato.jpg" alt="" srcset=""></p>
-            <span>Licitaciones privadas mediante contratos colaborativos entre <b>Promotora</b> y <b>Constructora.</b></span>
-        </div>
+              
+            <div class="space">
+                <div class="info">
+                    <p class="center-item"><img src="https://i.postimg.cc/ZYvVg5Qm/acuerdo-compra-trato.jpg" alt="" srcset=""></p>
+                    <span>Licitaciones privadas mediante contratos colaborativos entre    <b>Promotora</b> y <b>Constructora.</b></span>
+                </div>
+            </div>
         </section>
     </div>
         
@@ -116,25 +122,29 @@
     <!-- <div class="splitter"></div> -->
     <!-- Footer -->
     <footer id="footer">
-        <div class="foo-container">
-            <div class="logo">
-                <p><img src="./logos/Logo para sitio de Licitación 200x200.png" alt="" srcset=""></p>
-            </div>
-            <p class="more-info">© 2021 Licitaciones Privadas Panamá</p>
-        </div>
-
-        <div class="foo-container">
-            <h2>Acerca de nosotros</h2>
-            <p class="more-info">Empresa encargada de ofrecer un sistema por el que se adjudica la realización de una obra o un servicio, generalmente de carácter público, a la persona o la empresa que ofrece las mejores condiciones mediante licitaciones.</p>
-        </div>
-
-
-        <div class="foo-container">
-            <h2>Contáctanos</h2>
-            <div class="social-media">
-                <ion-icon name="logo-facebook"></ion-icon>
-                <ion-icon name="logo-linkedin"></ion-icon>
-                <ion-icon name="logo-instagram"></ion-icon>
+        <div class="space">
+            <div class="flex-footer">
+                <div class="foo-container">
+                    <div class="logo">
+                        <p><img src="./logos/Logo para sitio de Licitación 200x200.png" alt="" srcset=""></p>
+                    </div>
+                    <p class="more-info">© 2021 Licitaciones Privadas Panamá</p>
+                </div>
+        
+                <div class="foo-container">
+                    <h2>Acerca de nosotros</h2>
+                    <p class="more-info">Empresa encargada de ofrecer un sistema por el que se adjudica la realización de una obra o un servicio, generalmente de carácter público, a la persona o la empresa que ofrece las mejores condiciones mediante licitaciones.</p>
+                </div>
+        
+        
+                <div class="foo-container">
+                    <h2>Contáctanos</h2>
+                    <div class="social-media">
+                        <ion-icon name="logo-facebook" id="fb" class="svg"></ion-icon>
+                        <ion-icon name="logo-linkedin"id="li" class="svg"></ion-icon>
+                        <ion-icon name="logo-instagram" id="ig" class="svg"></ion-icon>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
